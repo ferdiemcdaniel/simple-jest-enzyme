@@ -1,1 +1,1 @@
-A simple implementation of Jest testing with Enzyme
+A simple setup and implementation of combining Jest tests with Enzyme
