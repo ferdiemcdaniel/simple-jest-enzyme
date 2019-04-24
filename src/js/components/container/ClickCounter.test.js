@@ -73,3 +73,18 @@ test('clicking button increments counter', () => {
     const counterTextDisplay = findByTestAttr(wrapper, 'component-text-display-counter');
     expect(counterTextDisplay.text()).toContain(testState.count + 1)
 });
+
+
+test('clicking reset button sets count to zero', () => {
+    const testState = { count: 8 }
+    const wrapper = setup(null, testState);
+
+    // simulate clicking on increment button
+    const counterResetButton = findByTestAttr(wrapper, 'button-reset-counter');
+    counterResetButton.simulate('click');
+    wrapper.update();
+
+    // get updated display when reseting counter to zero
+    const counterTextDisplay = findByTestAttr(wrapper, 'component-text-display-counter');
+    expect(counterTextDisplay.text()).toContain(0)
+})
